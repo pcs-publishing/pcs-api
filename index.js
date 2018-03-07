@@ -13,6 +13,9 @@ const config = require(`${process.cwd()}/config/local.js`),
 module.exports = {
 
     initialise: function() {
+
+        console.log(config);
+
         global['_'] = _;
 
         global['pcsapi'] = {
