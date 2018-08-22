@@ -1,6 +1,5 @@
 'use strict'
 
-const config = require(`${process.cwd()}/config/local.js`)
 const httpServer = require('./lib/http-server')
 const logger = require('./lib/logger')
 const _ = require('@sailshq/lodash')
@@ -11,8 +10,6 @@ const moduleLoader = require('./lib/module-loader')
 module.exports = {
 
   initialise: function () {
-    console.log(config)
-
     global['_'] = _
 
     global['pcsapi'] = {
