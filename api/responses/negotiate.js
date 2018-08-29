@@ -16,14 +16,13 @@
  *
  */
 
-module.exports = function(err) {
-    const res = this.res,
-        req = this.req;
+module.exports = function (err) {
+  const res = this.res
 
-    pcsapi.log.error(`negotiate.js`, err);
+  pcsapi.log.error(`negotiate.js`, err)
 
-    return sendError(res, err);
-};
+  return sendError(res, err)
+}
 
 /**
  * Sends error through to the response
@@ -33,10 +32,10 @@ module.exports = function(err) {
  * @param {Object} res response object
  * @param {Error} err error object
  */
-function sendError(res, err) {
-    const status = applyErrorStatusToResponse(res, err);
+function sendError (res, err) {
+  const status = applyErrorStatusToResponse(res, err)
 
-    sendErrorFromStatusCode(res, err, status);
+  sendErrorFromStatusCode(res, err, status)
 };
 
 /**
@@ -44,22 +43,22 @@ function sendError(res, err) {
  *
  * @param {Object} res The response
  */
-function sendErrorFromStatusCode(res, err, status) {
-    switch (status) {
-        case 403:
-            res.forbidden(err);
-            break;
-        case 404:
-            res.notFound(err);
-            break;
-        default:
-            if (status >= 400 && status < 500) {
-                res.badRequest(err);
-            } else {
-                res.serverError(err);
-            }
-            break;
-    }
+function sendErrorFromStatusCode (res, err, status) {
+  switch (status) {
+    case 403:
+      res.forbidden(err)
+      break
+    case 404:
+      res.notFound(err)
+      break
+    default:
+      if (status >= 400 && status < 500) {
+        res.badRequest(err)
+      } else {
+        res.serverError(err)
+      }
+      break
+  }
 };
 
 /**
@@ -69,8 +68,8 @@ function sendErrorFromStatusCode(res, err, status) {
  * @param {Object} res The response
  * @param {Error} err The error
  */
-function applyErrorStatusToResponse(res, err) {
-    const status = err.status || 500;
-    res.status(status);
-    return res;
+function applyErrorStatusToResponse (res, err) {
+  const status = err.status || 500
+  res.status(status)
+  return res
 };
