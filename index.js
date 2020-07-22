@@ -6,6 +6,7 @@ const _ = require('@sailshq/lodash')
 const connections = require('./lib/connections')
 const bluebird = require('bluebird')
 const moduleLoader = require('./lib/module-loader')
+const crud = require('./lib/crud')
 
 module.exports = {
 
@@ -22,7 +23,8 @@ module.exports = {
         mixins: {}
       },
       connections: {},
-      moduleLoader: moduleLoader
+      moduleLoader: moduleLoader,
+      crud: crud
     }
 
     pcsapi.log = logger
