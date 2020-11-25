@@ -10,7 +10,12 @@ const crud = require('./lib/crud')
 
 module.exports = {
 
-  initialise: function () {
+  /**
+    * Initialise the api
+    * @param  {Boolean} [noConnections=false] True to not set up any connections
+    *
+    */
+  initialise: function (noConnections = false) {
     global['_'] = _
 
     global['pcsapi'] = {
@@ -24,16 +29,22 @@ module.exports = {
       },
       connections: {},
       moduleLoader: moduleLoader,
-      crud: crud
+      crud: !noConnections ? crud : {}
     }
 
     pcsapi.log = logger
 
     pcsapi.log.debug(`index.js - initialise - Initialised`)
 
-    connections.create()
+    if (!noConnections) {
+      connections.create()
+    }
   },
 
+  /**
+    * Load the api
+    *
+    */
   load: function () {
     pcsapi.log.debug(`index.js - load - Loading`)
 
