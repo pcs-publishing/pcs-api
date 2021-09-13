@@ -43,12 +43,13 @@ module.exports = {
 
   /**
     * Load the api
+    * @param  {Function} [callback] The callback function
     *
     */
-  load: function () {
+  load: function (callback) {
     pcsapi.log.debug(`index.js - load - Loading`)
 
     moduleLoader.load()
-    httpServer.createServer()
+    httpServer.createServer(callback)
   }
 }
