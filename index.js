@@ -9,7 +9,6 @@ const moduleLoader = require('./lib/module-loader')
 const crud = require('./lib/crud')
 
 module.exports = {
-
   /**
     * Initialise the api
     * @param  {Boolean} [noConnections=false] True to not set up any connections
@@ -29,7 +28,19 @@ module.exports = {
       },
       connections: {},
       moduleLoader: moduleLoader,
-      crud: !noConnections ? crud : {}
+      crud: !noConnections ? crud : {},
+      util: {
+        array: require('./lib/util/array'),
+        datetime: require('./lib/util/datetime'),
+        knex: require('./lib/util/knex'),
+        number: require('./lib/util/number'),
+        object: require('./lib/util/object'),
+        param: require('./lib/util/param'),
+        query: require('./lib/util/query'),
+        string: require('./lib/util/string'),
+        timing: require('./lib/util/timing'),
+        value: require('./lib/util/value')
+      }
     }
 
     pcsapi.log = logger
