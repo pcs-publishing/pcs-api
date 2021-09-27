@@ -6,8 +6,16 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
-    "author": "",
+    "author": {
+        "name": "PCS",
+        "email": "developers@pcs-publishing.com",
+        "url": "https://pcs-publishing.com"
+    },
     "license": "ISC",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/pcs-publishing/pcs-api.git"
+    },
     "dependencies": {
         "@sailshq/lodash": "^3.10.2",
         "accounting": "^0.4.1",
@@ -23,6 +31,7 @@
         "winston": "^2.4.0"
     },
     "devDependencies": {
+        "prettier": "^2.4.1",
         "standard": "^12.0.1"
     },
     "standard": {

@@ -155,5 +155,5 @@ temp
 sybinit.err
 build
 skcontextualhelpstrings
-package-lock.json
+# package-lock.json
 .vscode

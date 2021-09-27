@@ -9,9 +9,9 @@ npm i pcs-publishing/pcs-api
 ```
 
 ```javascript
-const api = require("@pcs-publishing/pcs-api");
-api.initialise();
-api.load();
+const api = require('@pcs-publishing/pcs-api')
+api.initialise()
+api.load()
 ```
 
 ## Models

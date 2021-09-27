@@ -13,7 +13,7 @@
  *          - pass string to render specified view
  */
 
-module.exports = function sendOK (data, statusCode) {
+module.exports = function sendOK(data, statusCode) {
   const res = this.res
 
   return respond(res, cleanResponseData(data), statusCode)
@@ -26,18 +26,22 @@ module.exports = function sendOK (data, statusCode) {
  *
  * @return {Object} data The data with toJSON functions removed
  */
-function cleanResponseData (data) {
+function cleanResponseData(data) {
   for (let prop in data) {
     if (prop === 'toJSON') {
       data[prop] = undefined
-    } else if (_.isObject(data[prop])) { cleanResponseData(data[prop]) }
+    } else if (_.isObject(data[prop])) {
+      cleanResponseData(data[prop])
+    }
   }
 
   return data
 }
 
-function respond (res, record) {
-  pcsapi.log.verbose(`ok.js - respond - Sending 200 response to ${res.req.originalUrl} request`)
+function respond(res, record) {
+  pcsapi.log.verbose(
+    `ok.js - respond - Sending 200 response to ${res.req.originalUrl} request`
+  )
 
   res.writeHead(200, {
     'Content-Type': 'application/json'

@@ -32,18 +32,18 @@ module.exports = function (err) {
  * @param {Object} res response object
  * @param {Error} err error object
  */
-function sendError (res, err) {
+function sendError(res, err) {
   const status = applyErrorStatusToResponse(res, err)
 
   sendErrorFromStatusCode(res, err, status)
-};
+}
 
 /**
  * Send error in the response, method used is determined by the status code
  *
  * @param {Object} res The response
  */
-function sendErrorFromStatusCode (res, err, status) {
+function sendErrorFromStatusCode(res, err, status) {
   switch (status) {
     case 403:
       res.forbidden(err)
@@ -59,7 +59,7 @@ function sendErrorFromStatusCode (res, err, status) {
       }
       break
   }
-};
+}
 
 /**
  * Get the error status code and apply it to the
@@ -68,8 +68,8 @@ function sendErrorFromStatusCode (res, err, status) {
  * @param {Object} res The response
  * @param {Error} err The error
  */
-function applyErrorStatusToResponse (res, err) {
+function applyErrorStatusToResponse(res, err) {
   const status = err.status || 500
   res.status(status)
   return res
-};
+}
