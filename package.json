@@ -1,6 +1,6 @@
 {
-    "name": "pcs-api",
-    "version": "0.0.1",
+    "name": "@pcs-publishing/pcs-api",
+    "version": "0.1.0",
     "description": "Base API framework",
     "main": "index.js",
     "scripts": {},
