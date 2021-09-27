@@ -1,28 +1,33 @@
-## pcs-api
-Base API framework.
+# pcs-api
+
+> Base API framework
 
 ## Usage
 
-    Add to dependencies:
+```sh
+npm i pcs-publishing/pcs-api
+```
 
-    "dependencies": {
-        "pcs-api": "git+ssh://git@bitbucket:7999/sk/pcsapi.git"
-    }
-
-    Require, initialise and load:
-
-    const api = require('pcs-api');
-        api.initialise();
-        api.load();
+```javascript
+const api = require("@pcs-publishing/pcs-api");
+api.initialise();
+api.load();
+```
 
 ## Models
 
-    Create within api/models in host application
+```text
+  Create within api/models in host application
+```
 
 ## Controllers
 
-    Create within api/controllers in host application
+```text
+  Create within api/controllers in host application
+```
 
 ## Services
 
-    Create within api/services in host application
+```text
+  Create within api/services in host application
+```
