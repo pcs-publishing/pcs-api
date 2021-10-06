@@ -36,6 +36,8 @@ api.load()
 
 ### `v1.0.1`
 
+> Requires `node` v10 - v12 to ensure compatibility with installed version of `knex`. **`node` v14 or above will not work**.
+
 ```text
 @sailshq/lodash: ^3.10.2
 accounting: ^0.4.1
@@ -52,6 +54,8 @@ winston: ^2.4.0
 ```
 
 ### `v1.0.0`
+
+> Requires `node` v10 - v12 to ensure compatibility with installed version of `knex`. **`node` v14 or above will not work**.
 
 ```text
 @sailshq/lodash: ^3.10.2
