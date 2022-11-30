@@ -32,6 +32,7 @@ module.exports = {
       util: {
         array: require('./lib/util/array'),
         datetime: require('./lib/util/datetime'),
+        json: require('./lib/util/json'),
         knex: require('./lib/util/knex'),
         number: require('./lib/util/number'),
         object: require('./lib/util/object'),
