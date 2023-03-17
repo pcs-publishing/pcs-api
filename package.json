@@ -10,10 +10,11 @@
         "url": "https://pcs-publishing.com"
     },
     "license": "ISC",
-    "repository": {
-        "type": "git",
-        "url": "git://github.com/pcs-publishing/pcs-api.git"
-    },
+    "repository": "https://github.com/pcs-publishing/pcs-api.git",
+    "publishConfig": {
+        "access": "restricted",
+        "registry": "https://registry.npmjs.org/"
+      },
     "dependencies": {
         "@pcs/utils": "^0.4.7",
         "@sailshq/lodash": "^3.10.2",
