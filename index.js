@@ -37,7 +37,6 @@ module.exports = {
         number: require('./lib/util/number'),
         object: require('./lib/util/object'),
         param: require('./lib/util/param'),
-        query: require('./lib/util/query'),
         string: require('./lib/util/string'),
         timing: require('./lib/util/timing'),
         value: require('./lib/util/value')
